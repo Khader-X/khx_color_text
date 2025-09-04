@@ -5,6 +5,135 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2025-01-09
+
+### 🎉 Major Lines Feature Release
+
+This release introduces the powerful `cline()` function for creating decorative terminal lines with extensive character support and IDE autocomplete functionality.
+
+### ✨ Added
+
+#### Decorative Lines Module
+- **`cline()` function**: Create decorative terminal lines with automatic width detection
+- **50+ line characters**: Comprehensive library of Unicode and ASCII characters
+- **Character categories**: Basic, box drawing, blocks, waves, decorative, geometric, mathematical
+- **IDE autocomplete**: Full Literal type support for character names
+- **Automatic sizing**: Lines fill terminal width by default
+- **Custom width**: Override with specific width when needed
+
+#### Character Name System
+- **Descriptive names**: Use "asterisk" instead of "*", "full_block" instead of "█"
+- **Type safety**: Literal types prevent invalid character names
+- **Dual input**: Accept both direct characters and descriptive names
+- **Character lookup**: `get_char()` and `list_chars()` utility functions
+- **Category organization**: Characters grouped by type for easy discovery
+
+#### Line Character Categories
+- **Basic ASCII**: asterisk, dash, equals, underscore, tilde, etc.
+- **Unicode Box Drawing**: horizontal, heavy_horizontal, double_horizontal, dashed variants
+- **Block Characters**: full_block, dark_shade, medium_shade, light_shade, etc.
+- **Wave Patterns**: tilde, wave_dash, almost_equal, triple_tilde
+- **Decorative**: black_star, heart_suit, diamond_suit, black_diamond, etc.
+- **Geometric**: triangles, arrows, pointers in various directions
+- **Mathematical**: infinity, summation, integral, square_root, etc.
+
+#### Enhanced API
+- **Unified styling**: `cline()` supports all `cprint()` color and style options
+- **Terminal integration**: Automatic terminal width detection with fallbacks
+- **Flexible parameters**: Optional width, colors, styles, and fill behavior
+- **Predefined functions**: `solid_line()`, `dashed_line()`, `wave_line()`, etc.
+
+#### Developer Experience
+- **IDE support**: Full autocomplete when typing character names
+- **Type hints**: Complete type safety with Union[str, CharacterName]
+- **Documentation**: Comprehensive examples and character reference
+- **Backward compatibility**: All existing code continues to work unchanged
+
+### 🔧 Changed
+- **Version**: Updated from 0.2.0 to 0.3.0
+- **Package exports**: Added `cline` to main package imports
+- **Package description**: Updated to highlight decorative lines feature
+- **Documentation**: Major README update with lines section and examples
+
+### 📊 New Capabilities
+
+#### Basic Usage
+```python
+from khx_color_text import cline
+
+# Simple line filling terminal
+cline()
+
+# Colored lines
+cline("*", color="#FF0000")
+cline("full_block", color="#00FF00")
+
+# Custom width and styling
+cline("wave_dash", width=50, color="#0000FF", style="bold")
+```
+
+#### Character Names with IDE Support
+```python
+# IDE will autocomplete these names:
+cline("asterisk")        # *
+cline("full_block")      # █
+cline("wave_dash")       # 〜
+cline("infinity")        # ∞
+cline("black_star")      # ★
+cline("heart_suit")      # ♥
+cline("double_horizontal")  # ═
+```
+
+#### Advanced Features
+```python
+# Complex styling
+cline("black_diamond", color="#FFD700", bg_color="#000080", 
+      style=["bold", "underline"])
+
+# Automatic terminal width
+cline("horizontal")  # Fills entire terminal width
+
+# Custom width
+cline("equals", width=30, color="blue")
+```
+
+### 🏗️ Technical Implementation
+- **Modular architecture**: New `lines/` module with organized structure
+- **Character database**: Comprehensive character definitions with categories
+- **Terminal utilities**: Cross-platform terminal width detection
+- **Type system**: Advanced Literal types for IDE autocomplete
+- **Performance**: Efficient character lookup and line generation
+
+### 📚 Documentation & Examples
+- **Lines README**: Dedicated documentation for lines module
+- **Character reference**: Complete list of available characters
+- **Usage examples**: Multiple example files demonstrating features
+- **Test coverage**: Comprehensive tests for all line functionality
+
+### 🔄 Migration Guide
+
+**✅ No breaking changes!** All existing code continues to work unchanged.
+
+#### New capabilities you can use:
+```python
+from khx_color_text import cprint, cline
+
+# Existing functionality unchanged
+cprint("Hello World!", "red")
+
+# New decorative lines
+cline()  # Simple line
+cline("*", color="red")  # Colored line
+cline("full_block", color="green")  # Using character names
+```
+
+### 🎯 Use Cases
+- **Section dividers**: Beautiful separators in terminal output
+- **Progress indicators**: Visual progress bars and status lines
+- **Decorative headers**: Stylish section headers and footers
+- **Data visualization**: Simple charts and graphs in terminal
+- **CLI applications**: Enhanced user interface elements
+
 ## [0.2.0] - 2025-01-09
 
 ### 🎉 Major Feature Release

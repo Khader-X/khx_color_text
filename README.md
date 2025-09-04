@@ -22,6 +22,9 @@ A comprehensive Python package for printing colored and styled text in the termi
 - **📦 Zero Dependencies**: Uses only Python standard library and colorama
 - **🎯 Type Safe**: Full type hints and mypy support
 - **⚡ CLI Tool**: Feature-rich command-line interface
+- **📏 Decorative Lines**: Create beautiful terminal lines with `cline()` function
+- **🔤 Character Names**: IDE autocomplete support for 50+ line characters
+- **📐 Auto-sizing**: Automatic terminal width detection for perfect lines
 - **📚 Rich Examples**: Comprehensive documentation and examples
 
 ## Installation
@@ -35,7 +38,7 @@ pip install khx_color_text
 <img src="docs/assets/basic_usage_terminal.svg" alt="Basic usage example" width="800">
 
 ```python
-from khx_color_text import cprint
+from khx_color_text import cprint, cline
 
 # Basic colors
 cprint("Hello, World!", "red")
@@ -56,6 +59,12 @@ cprint("Highlighted text", "white", bg_color="red")
 
 # Complex combinations
 cprint("Fancy text", "#00FF00", bg_color=(50, 50, 50), style=["bold", "italic"])
+
+# NEW: Decorative lines
+cline()  # Simple line filling terminal width
+cline("*", color="#FF0000")  # Red asterisk line
+cline("full_block", color="#00FF00")  # Green block line using character name
+cline("wave_dash", width=50, color="#0000FF")  # Blue wave line with custom width
 ```
 
 ## Color Support
@@ -83,6 +92,44 @@ cprint("Fancy text", "#00FF00", bg_color=(50, 50, 50), style=["bold", "italic"])
 
 - **RGB Format**: `(255, 0, 0)` (values 0-255)
 - **Precise control**: 16.7 million colors available
+
+## Decorative Lines
+
+**NEW in v0.3.0**: Create beautiful terminal lines with the `cline()` function!
+
+```python
+from khx_color_text import cline
+
+# Basic lines
+cline()  # Fills entire terminal width
+cline("*", color="#FF0000")  # Red asterisk line
+cline("=", width=50, color="blue")  # Blue equals line, 50 chars wide
+
+# Using character names (with IDE autocomplete!)
+cline("full_block", color="#00FF00")  # █ Green block line
+cline("wave_dash", color="#FF00FF")   # 〜 Purple wave line
+cline("black_diamond", color="#FFFF00")  # ◆ Yellow diamond line
+cline("infinity", color="#00FFFF")    # ∞ Cyan infinity line
+
+# Advanced styling
+cline("black_star", color="#FFD700", bg_color="#000080", style="bold")
+```
+
+### Character Categories
+- **Basic ASCII**: asterisk, dash, equals, underscore, etc.
+- **Unicode Box Drawing**: horizontal, heavy_horizontal, double_horizontal
+- **Block Characters**: full_block, dark_shade, medium_shade, light_shade
+- **Wave Patterns**: tilde, wave_dash, almost_equal, triple_tilde
+- **Decorative**: black_star, heart_suit, diamond_suit, black_diamond
+- **Geometric**: black_up_triangle, black_down_triangle, black_left_pointer
+- **Mathematical**: infinity, summation, integral, square_root
+
+### Features
+- **Auto-sizing**: Lines automatically fill terminal width
+- **50+ Characters**: Extensive library of line characters
+- **IDE Support**: Full autocomplete for character names
+- **Type Safe**: Literal types for character names
+- **Flexible**: Use direct characters or descriptive names
 
 ## Text Styling
 
@@ -158,6 +205,22 @@ Print colored and styled text to the terminal.
 - `end` (str): String appended after text (default: newline)
 - `sep` (str): String between multiple arguments (default: space)
 - `file`: File object to write to (default: sys.stdout)
+
+### `cline(char="-", width=None, color=None, bg_color=None, style=None, fill_terminal=True)`
+
+**NEW**: Create decorative terminal lines with automatic width detection.
+
+**Parameters:**
+- `char` (str | CharacterName): Character to use or character name (default: "-")
+- `width` (int, optional): Line width. If None, uses terminal width or 50
+- `color` (str | tuple, optional): Text color in various formats
+- `bg_color` (str | tuple, optional): Background color
+- `style` (str | list, optional): Text style(s)
+- `fill_terminal` (bool): Auto-fill terminal width when width is None (default: True)
+
+**Character Names:** Full IDE autocomplete support for 50+ character names like:
+- `"asterisk"` → `*`, `"full_block"` → `█`, `"wave_dash"` → `〜`
+- `"infinity"` → `∞`, `"black_star"` → `★`, `"heart_suit"` → `♥`
 
 **Color Formats:**
 - Predefined: `"red"`, `"bright_green"`, `"orange"`
