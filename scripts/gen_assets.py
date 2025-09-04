@@ -13,8 +13,31 @@ from rich.panel import Panel
 from rich.columns import Columns
 from rich.table import Table
 from rich.align import Align
+from rich.theme import Theme
 from khx_color_text.colors.predefined import PREDEFINED_COLORS
 
+
+def create_large_font_console(width=200, height=80):
+    """Create a Rich console with larger font size for better visibility."""
+    return Console(record=True, width=width, height=height)
+
+def export_large_font_svg(console, title, font_size=24):
+    """Export SVG with much larger font size for maximum visibility."""
+    svg_content = console.export_svg(title=title)
+    
+    # Increase font size in the SVG for maximum visibility
+    svg_content = svg_content.replace('font-size="14"', f'font-size="{font_size}"')
+    svg_content = svg_content.replace('font-size:14px', f'font-size:{font_size}px')
+    svg_content = svg_content.replace('font-size="12"', f'font-size="{font_size}"')
+    svg_content = svg_content.replace('font-size:12px', f'font-size:{font_size}px')
+    svg_content = svg_content.replace('font-size="16"', f'font-size="{font_size}"')
+    svg_content = svg_content.replace('font-size:16px', f'font-size:{font_size}px')
+    
+    # Also increase line height for better readability
+    line_height = font_size * 1.3
+    svg_content = svg_content.replace('dy="1.2em"', f'dy="{line_height/font_size:.1f}em"')
+    
+    return svg_content
 
 def generate_svg_assets():
     """Generate large, comprehensive SVG previews for every feature and example."""
@@ -51,7 +74,7 @@ def generate_svg_assets():
 
     # 1. EXTRA LARGE MAIN SHOWCASE
     print("🎨 Generating EXTRA LARGE main showcase...")
-    console = Console(record=True, width=200, height=80)
+    console = create_large_font_console(width=200, height=80)
 
     # Title
     title = Text(
@@ -132,7 +155,7 @@ def generate_svg_assets():
         console.print(f"Highlighted Text", style=f"{text_color} on {bg_color}")
 
     svg_path = assets_dir / "main_showcase.svg"
-    svg_content = console.export_svg(title="khx_color_text Main Showcase")
+    svg_content = export_large_font_svg(console, "khx_color_text Main Showcase", font_size=28)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(svg_path)
@@ -140,7 +163,7 @@ def generate_svg_assets():
 
     # 2. EXTRA LARGE COLOR PALETTE SHOWCASE
     print("🎨 Generating EXTRA LARGE color palette...")
-    console = Console(record=True, width=180, height=60)
+    console = create_large_font_console(width=180, height=60)
 
     console.print("🎨 COMPLETE COLOR PALETTE", style="bold bright_blue")
     console.print("=" * 50, style="bright_blue")
@@ -187,7 +210,7 @@ def generate_svg_assets():
         console.print()
 
     svg_path = assets_dir / "color_palette_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Color Palette")
+    svg_content = export_large_font_svg(console, "khx_color_text Color Palette", font_size=26)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(svg_path)
@@ -195,7 +218,7 @@ def generate_svg_assets():
 
     # 3. EXTRA LARGE HEX COLOR DEMONSTRATION
     print("🌈 Generating EXTRA LARGE hex color demo...")
-    console = Console(record=True, width=180, height=55)
+    console = create_large_font_console(width=180, height=55)
 
     console.print("🌈 HEX COLOR SUPPORT", style="bold bright_blue")
     console.print("=" * 40, style="bright_blue")
@@ -220,7 +243,7 @@ def generate_svg_assets():
         console.print()
 
     svg_path = assets_dir / "hex_colors_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Hex Colors")
+    svg_content = export_large_font_svg(console, "khx_color_text Hex Colors", font_size=26)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(svg_path)
@@ -228,7 +251,7 @@ def generate_svg_assets():
 
     # 4. EXTRA LARGE RGB COLOR DEMONSTRATION
     print("🎨 Generating EXTRA LARGE RGB color demo...")
-    console = Console(record=True, width=180, height=55)
+    console = create_large_font_console(width=180, height=55)
 
     console.print("🎨 RGB COLOR SUPPORT", style="bold bright_blue")
     console.print("=" * 40, style="bright_blue")
@@ -253,7 +276,7 @@ def generate_svg_assets():
         console.print()
 
     svg_path = assets_dir / "rgb_colors_large.svg"
-    svg_content = console.export_svg(title="khx_color_text RGB Colors")
+    svg_content = export_large_font_svg(console, "khx_color_text RGB Colors", font_size=26)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(svg_path)
@@ -261,7 +284,7 @@ def generate_svg_assets():
 
     # 5. EXTRA LARGE TEXT STYLES DEMONSTRATION
     print("✍️ Generating EXTRA LARGE text styles demo...")
-    console = Console(record=True, width=180, height=60)
+    console = create_large_font_console(width=180, height=60)
 
     console.print("✍️ TEXT STYLING OPTIONS", style="bold bright_blue")
     console.print("=" * 45, style="bright_blue")
@@ -311,7 +334,7 @@ def generate_svg_assets():
         console.print()
 
     svg_path = assets_dir / "text_styles_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Text Styles")
+    svg_content = export_large_font_svg(console, "khx_color_text Text Styles", font_size=26)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(svg_path)
@@ -319,7 +342,7 @@ def generate_svg_assets():
 
     # 6. EXTRA LARGE BACKGROUND COLORS DEMONSTRATION
     print("🌟 Generating EXTRA LARGE background colors demo...")
-    console = Console(record=True, width=180, height=55)
+    console = create_large_font_console(width=180, height=55)
 
     console.print("🌟 BACKGROUND COLOR SUPPORT", style="bold bright_blue")
     console.print("=" * 50, style="bright_blue")
@@ -355,7 +378,7 @@ def generate_svg_assets():
         console.print()
 
     svg_path = assets_dir / "background_colors_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Background Colors")
+    svg_content = export_large_font_svg(console, "khx_color_text Background Colors", font_size=26)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(svg_path)
@@ -363,7 +386,7 @@ def generate_svg_assets():
 
     # 7. EXTRA LARGE CLI DEMONSTRATION
     print("⚡ Generating EXTRA LARGE CLI demo...")
-    console = Console(record=True, width=180, height=65)
+    console = create_large_font_console(width=180, height=65)
 
     console.print("⚡ COMMAND-LINE INTERFACE", style="bold bright_blue")
     console.print("=" * 45, style="bright_blue")
@@ -410,7 +433,7 @@ def generate_svg_assets():
         console.print(f"  $ {cmd}", style="bright_cyan")
 
     svg_path = assets_dir / "cli_demo_large.svg"
-    svg_content = console.export_svg(title="khx_color_text CLI Demo")
+    svg_content = export_large_font_svg(console, "khx_color_text CLI Demo", font_size=26)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(svg_path)
@@ -418,7 +441,7 @@ def generate_svg_assets():
 
     # 8. EXTRA LARGE API EXAMPLES
     print("🔧 Generating EXTRA LARGE API examples...")
-    console = Console(record=True, width=180, height=70)
+    console = create_large_font_console(width=180, height=70)
 
     console.print("🔧 PYTHON API EXAMPLES", style="bold bright_blue")
     console.print("=" * 40, style="bright_blue")
@@ -476,7 +499,7 @@ def generate_svg_assets():
         console.print()
 
     svg_path = assets_dir / "api_examples_large.svg"
-    svg_content = console.export_svg(title="khx_color_text API Examples")
+    svg_content = export_large_font_svg(console, "khx_color_text API Examples", font_size=26)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(svg_path)
@@ -484,7 +507,7 @@ def generate_svg_assets():
 
     # 9. EXTRA LARGE FEATURE COMPARISON
     print("📊 Generating EXTRA LARGE feature comparison...")
-    console = Console(record=True, width=180, height=55)
+    console = create_large_font_console(width=180, height=55)
 
     console.print("📊 FEATURE COMPARISON: v0.1.0 → v0.2.0", style="bold bright_blue")
     console.print("=" * 60, style="bright_blue")
@@ -524,7 +547,7 @@ def generate_svg_assets():
     )
 
     svg_path = assets_dir / "feature_comparison_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Feature Comparison")
+    svg_content = export_large_font_svg(console, "khx_color_text Feature Comparison", font_size=26)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(svg_path)
@@ -563,7 +586,7 @@ def generate_svg_assets():
     console.print("  $ khx-ct --help        # Get help", style="bright_green")
 
     svg_path = assets_dir / "installation_demo_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Installation")
+    svg_content = export_large_font_svg(console, "khx_color_text Installation", font_size=26)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(svg_path)
@@ -586,7 +609,7 @@ def generate_svg_assets():
         console.print(f"Usage: Perfect for {color} themed content", style="dim")
 
         svg_path = assets_dir / f"color_{color}_large.svg"
-        svg_content = console.export_svg(title=f"khx_color_text {color}")
+        svg_content = export_large_font_svg(console, f"khx_color_text {color}", font_size=24)
 
         with open(svg_path, "w", encoding="utf-8") as f:
             f.write(svg_content)
@@ -656,7 +679,7 @@ def generate_svg_assets():
         console.print()
     
     svg_path = assets_dir / "comprehensive_examples_extra_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Comprehensive Examples")
+    svg_content = export_large_font_svg(console, "khx_color_text Comprehensive Examples", font_size=30)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(str(svg_path))
@@ -721,7 +744,7 @@ def generate_svg_assets():
         console.print()
     
     svg_path = assets_dir / "style_combinations_extra_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Style Combinations")
+    svg_content = export_large_font_svg(console, "khx_color_text Style Combinations", font_size=30)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(str(svg_path))
@@ -763,7 +786,7 @@ def generate_svg_assets():
         console.print()
     
     svg_path = assets_dir / "error_handling_extra_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Error Handling")
+    svg_content = export_large_font_svg(console, "khx_color_text Error Handling", font_size=28)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(str(svg_path))
@@ -849,7 +872,7 @@ def generate_svg_assets():
         console.print()
     
     svg_path = assets_dir / "real_world_use_cases_extra_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Real-World Use Cases")
+    svg_content = export_large_font_svg(console, "khx_color_text Real-World Use Cases", font_size=30)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(str(svg_path))
@@ -908,7 +931,7 @@ def generate_svg_assets():
         console.print(f"  {feature}", style="bright_green")
     
     svg_path = assets_dir / "advanced_cli_extra_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Advanced CLI")
+    svg_content = export_large_font_svg(console, "khx_color_text Advanced CLI", font_size=30)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(str(svg_path))
@@ -961,7 +984,7 @@ def generate_svg_assets():
         console.print()
     
     svg_path = assets_dir / "integration_examples_extra_large.svg"
-    svg_content = console.export_svg(title="khx_color_text Integration Examples")
+    svg_content = export_large_font_svg(console, "khx_color_text Integration Examples", font_size=30)
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
     generated_files.append(str(svg_path))
