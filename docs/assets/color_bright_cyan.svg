@@ -19,41 +19,41 @@
         font-weight: 700;
     }
 
-    .terminal-745553807-matrix {
+    .terminal-589513650-matrix {
         font-family: Fira Code, monospace;
         font-size: 20px;
         line-height: 24.4px;
         font-variant-east-asian: full-width;
     }
 
-    .terminal-745553807-title {
+    .terminal-589513650-title {
         font-size: 18px;
         font-weight: bold;
         font-family: arial;
     }
 
-    .terminal-745553807-r1 { fill: #ffff00 }
-.terminal-745553807-r2 { fill: #c5c8c6 }
+    .terminal-589513650-r1 { fill: #55ffff }
+.terminal-589513650-r2 { fill: #c5c8c6 }
     </style>
 
     <defs>
-    <clipPath id="terminal-745553807-clip-terminal">
+    <clipPath id="terminal-589513650-clip-terminal">
       <rect x="0" y="0" width="975.0" height="23.4" />
     </clipPath>
     
     </defs>
 
-    <rect fill="#292929" stroke="rgba(255,255,255,0.35)" stroke-width="1" x="1" y="1" width="992" height="72.4" rx="8"/><text class="terminal-745553807-title" fill="#c5c8c6" text-anchor="middle" x="496" y="27">khx_color_text&#160;yellow</text>
+    <rect fill="#292929" stroke="rgba(255,255,255,0.35)" stroke-width="1" x="1" y="1" width="992" height="72.4" rx="8"/><text class="terminal-589513650-title" fill="#c5c8c6" text-anchor="middle" x="496" y="27">khx_color_text&#160;bright_cyan</text>
             <g transform="translate(26,22)">
             <circle cx="0" cy="0" r="7" fill="#ff5f57"/>
             <circle cx="22" cy="0" r="7" fill="#febc2e"/>
             <circle cx="44" cy="0" r="7" fill="#28c840"/>
             </g>
         
-    <g transform="translate(9, 41)" clip-path="url(#terminal-745553807-clip-terminal)">
+    <g transform="translate(9, 41)" clip-path="url(#terminal-589513650-clip-terminal)">
     
-    <g class="terminal-745553807-matrix">
-    <text class="terminal-745553807-r1" x="0" y="20" textLength="439.2" clip-path="url(#terminal-745553807-line-0)">khx_color_text:&#160;yellow&#160;color&#160;example</text><text class="terminal-745553807-r2" x="976" y="20" textLength="12.2" clip-path="url(#terminal-745553807-line-0)">
+    <g class="terminal-589513650-matrix">
+    <text class="terminal-589513650-r1" x="0" y="20" textLength="500.2" clip-path="url(#terminal-589513650-line-0)">khx_color_text:&#160;bright_cyan&#160;color&#160;example</text><text class="terminal-589513650-r2" x="976" y="20" textLength="12.2" clip-path="url(#terminal-589513650-line-0)">
 </text>
     </g>
     </g>

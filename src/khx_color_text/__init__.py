@@ -1,7 +1,8 @@
-"""khx_color_text - A minimal package for printing colored text in the terminal."""
+"""khx_color_text - A comprehensive package for printing colored and styled text in the terminal."""
 
 from .core import cprint
-from .colors import ALLOWED_COLORS
+from .colors.predefined import PREDEFINED_COLORS
+from .styles.text_styles import TextStyle
 
-__version__ = "0.1.0"
-__all__ = ["cprint", "ALLOWED_COLORS"]
+__version__ = "0.2.0"
+__all__ = ["cprint", "PREDEFINED_COLORS", "TextStyle"]

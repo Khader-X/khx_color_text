@@ -6,9 +6,23 @@
 [![CI Status](https://img.shields.io/badge/CI-passing-green.svg)](https://github.com/Khader-X/khx_color_text/actions)
 [![Downloads](https://pepy.tech/badge/khx-color-text)](https://pepy.tech/project/khx-color-text)
 
-A minimal Python package for printing colored text in the terminal with exactly five basic colors.
+A comprehensive Python package for printing colored and styled text in the terminal with extensive customization options and cross-platform support.
 
 **🎉 Now available on PyPI!** Install with: `pip install khx_color_text`
+
+<img src="docs/assets/showcase.svg" alt="khx_color_text showcase" width="800">
+
+## ✨ Features
+
+- **🎨 Multiple Color Formats**: Predefined colors, hex codes (#FF0000), and RGB tuples (255, 0, 0)
+- **✨ Text Styling**: Bold, italic, underline, strikethrough, dim, and bright styles
+- **🌈 Background Colors**: Support for background colors in all color formats
+- **🔧 Single API**: One powerful `cprint()` function for all features
+- **🖥️ Cross-platform**: Works on Windows, macOS, and Linux
+- **📦 Zero Dependencies**: Uses only Python standard library and colorama
+- **🎯 Type Safe**: Full type hints and mypy support
+- **⚡ CLI Tool**: Feature-rich command-line interface
+- **📚 Rich Examples**: Comprehensive documentation and examples
 
 ## Installation
 
@@ -16,73 +30,177 @@ A minimal Python package for printing colored text in the terminal with exactly 
 pip install khx_color_text
 ```
 
-## Usage
-
-### Python API
+## Quick Start
 
 ```python
 from khx_color_text import cprint
 
-# Print text in different colors
-cprint("Hello World!", "red")
+# Basic colors
+cprint("Hello, World!", "red")
 cprint("Success message", "green")
-cprint("Information", "blue")
-cprint("Warning", "yellow")
-cprint("Highlight", "cyan")
+
+# Hex colors
+cprint("Custom orange", "#FF6B35")
+
+# RGB colors
+cprint("Custom purple", (138, 43, 226))
+
+# With styling
+cprint("Bold red text", "red", style="bold")
+cprint("Multiple styles", "blue", style=["bold", "underline"])
+
+# With background
+cprint("Highlighted text", "white", bg_color="red")
+
+# Complex combinations
+cprint("Fancy text", "#00FF00", bg_color=(50, 50, 50), style=["bold", "italic"])
 ```
 
-### Command Line Interface
+## Color Support
+
+### Predefined Colors
+<img src="docs/assets/hex_examples.svg" alt="Hex color examples" width="600">
+
+**Basic Colors**: red, green, blue, yellow, cyan, magenta, white, black  
+**Bright Colors**: bright_red, bright_green, bright_blue, bright_yellow, bright_cyan, bright_magenta, bright_white, bright_black  
+**Aliases**: orange, purple, pink, gray, grey
+
+### Custom Colors
+<img src="docs/assets/rgb_examples.svg" alt="RGB color examples" width="600">
+
+- **Hex Format**: `#FF0000`, `#f00` (3 or 6 digit hex)
+- **RGB Format**: `(255, 0, 0)` (values 0-255)
+
+## Text Styling
+
+<img src="docs/assets/combinations.svg" alt="Style combinations" width="400">
+
+Available styles: `bold`, `italic`, `underline`, `strikethrough`, `dim`, `bright`
+
+```python
+# Single style
+cprint("Bold text", "red", style="bold")
+
+# Multiple styles
+cprint("Bold and underlined", "blue", style=["bold", "underline"])
+
+# Using TextStyle enum
+from khx_color_text import TextStyle
+cprint("Enum style", "green", style=TextStyle.BOLD)
+```
+
+## CLI Usage
+
+The package includes a powerful command-line tool `khx-ct`:
 
 ```bash
 # Basic usage
-khx-ct "Hello World!" --color red
+khx-ct "Hello, World!" -c red
 
-# Default color is cyan
-khx-ct "Hello World!"
+# Hex colors
+khx-ct "Custom color" --hex "#FF6B35"
 
-# All available colors
-khx-ct "Red text" --color red
-khx-ct "Green text" --color green
-khx-ct "Blue text" --color blue
-khx-ct "Yellow text" --color yellow
-khx-ct "Cyan text" --color cyan
+# RGB colors
+khx-ct "RGB color" --rgb "255,107,53"
+
+# With styling
+khx-ct "Bold text" -c blue -s bold
+
+# Multiple styles
+khx-ct "Fancy text" -c green -s bold,underline
+
+# With background
+khx-ct "Highlighted" -c white --bg red
+
+# Show examples
+khx-ct --examples
+khx-ct --advanced-examples
+khx-ct --showcase
 ```
+
+## API Reference
+
+### `cprint(text, color=None, bg_color=None, style=None, end="\n", sep=" ", file=None)`
+
+Print colored and styled text to the terminal.
+
+**Parameters:**
+- `text` (str): The text to print
+- `color` (str | tuple, optional): Text color in various formats
+- `bg_color` (str | tuple, optional): Background color
+- `style` (str | list, optional): Text style(s)
+- `end` (str): String appended after text (default: newline)
+- `sep` (str): String between multiple arguments (default: space)
+- `file`: File object to write to (default: sys.stdout)
+
+**Color Formats:**
+- Predefined: `"red"`, `"bright_green"`, `"orange"`
+- Hex: `"#FF0000"`, `"#f00"`
+- RGB: `(255, 0, 0)`
+
+**Styles:**
+- Single: `"bold"`, `"italic"`, `"underline"`
+- Multiple: `["bold", "underline"]`
+- Enum: `TextStyle.BOLD`
 
 ## Examples
 
-### Red
+### Basic Usage
 ```python
-cprint("Hello from khx_color_text in red!", "red")
-```
-<img src="docs/assets/color_red.svg" alt="Red example" width="520">
+from khx_color_text import cprint
 
-### Green
-```python
-cprint("Hello from khx_color_text in green!", "green")
+# Run basic examples
+if __name__ == "__main__":
+    cprint("Red text", "red")
+    cprint("Green text", "green")
+    cprint("Blue text", "blue")
 ```
-<img src="docs/assets/color_green.svg" alt="Green example" width="520">
 
-### Blue
+### Advanced Features
 ```python
-cprint("Hello from khx_color_text in blue!", "blue")
-```
-<img src="docs/assets/color_blue.svg" alt="Blue example" width="520">
+from khx_color_text import cprint, TextStyle
 
-### Yellow
-```python
-cprint("Hello from khx_color_text in yellow!", "yellow")
+if __name__ == "__main__":
+    # Hex colors
+    cprint("Orange text", "#FF6B35")
+    cprint("Purple text", "#8A2BE2")
+    
+    # RGB colors
+    cprint("Custom red", (255, 0, 0))
+    cprint("Custom blue", (0, 100, 200))
+    
+    # Styling
+    cprint("Bold red", "red", style="bold")
+    cprint("Italic blue", "blue", style="italic")
+    cprint("Multiple styles", "green", style=["bold", "underline"])
+    
+    # Background colors
+    cprint("White on red", "white", bg_color="red")
+    cprint("Yellow on purple", "yellow", bg_color="#800080")
+    
+    # Complex combinations
+    cprint("Ultimate text", "#00FF00", bg_color=(50, 50, 50), 
+           style=[TextStyle.BOLD, TextStyle.ITALIC])
 ```
-<img src="docs/assets/color_yellow.svg" alt="Yellow example" width="520">
 
-### Cyan
-```python
-cprint("Hello from khx_color_text in cyan!", "cyan")
+## Testing
+
+Run the test suite:
+
+```bash
+# Basic functionality tests
+python tests/test_basic_functionality.py
+
+# Advanced features tests  
+python tests/test_advanced_features.py
+
+# Color utility tests
+python tests/test_color_utilities.py
 ```
-<img src="docs/assets/color_cyan.svg" alt="Cyan example" width="520">
 
 ## How Previews Are Generated
 
-The SVG previews above are generated deterministically using the `scripts/gen_assets.py` script. This script uses Rich Console with a fixed width (60 characters) to capture the colored output and export it as SVG files. The previews are automatically regenerated on each push to the main branch via GitHub Actions.
+The SVG previews above are generated using the `scripts/gen_assets.py` script. This script uses Rich Console to capture colored output and export it as SVG files. The previews are automatically regenerated on each push to the main branch via GitHub Actions.
 
 To regenerate the previews locally:
 
@@ -90,15 +208,6 @@ To regenerate the previews locally:
 pip install -e .[docs]
 python scripts/gen_assets.py
 ```
-
-## Supported Colors
-
-The package supports exactly five colors:
-- `red`
-- `green` 
-- `blue`
-- `yellow`
-- `cyan`
 
 ## Cross-Platform Support
 

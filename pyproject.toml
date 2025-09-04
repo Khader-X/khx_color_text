@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "khx_color_text"
-version = "0.1.0"
-description = "A minimal Python package for printing colored text in the terminal with five basic colors"
+version = "0.2.0"
+description = "A comprehensive Python package for printing colored and styled text in the terminal with extensive customization options"
 authors = [
     {name = "ABUELTAYEF Khader", email = "abueltayef.khader@gmail.com"}
 ]
