@@ -1,6 +1,13 @@
-# **Examples**
+# Examples
 
-Here are examples of all five supported colors with visual previews:
+Here are examples of all five supported colors with visual previews.
+
+First, install the package from PyPI:
+```bash
+pip install khx_color_text
+```
+
+Then try these examples:
 
 ## Red
 ```python

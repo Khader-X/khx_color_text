@@ -1,10 +1,14 @@
 # khx_color_text
 
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://python.org)
+[![PyPI version](https://badge.fury.io/py/khx-color-text.svg)](https://badge.fury.io/py/khx-color-text)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CI Status](https://img.shields.io/badge/CI-passing-green.svg)](https://github.com/Khader-X/khx_color_text/actions)
+[![Downloads](https://pepy.tech/badge/khx-color-text)](https://pepy.tech/project/khx-color-text)
 
 A minimal Python package for printing colored text in the terminal with exactly five basic colors.
+
+**🎉 Now available on PyPI!** Install with: `pip install khx_color_text`
 
 ## Installation
 
@@ -99,6 +103,23 @@ The package supports exactly five colors:
 ## Cross-Platform Support
 
 This package uses `colorama` to ensure colored output works correctly on Windows, macOS, and Linux terminals.
+
+## Package Statistics
+
+- **PyPI**: https://pypi.org/project/khx-color-text/
+- **Source Code**: https://github.com/Khader-X/khx_color_text
+- **Documentation**: https://khader-x.github.io/khx_color_text/
+- **Issues**: https://github.com/Khader-X/khx_color_text/issues
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 

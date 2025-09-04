@@ -2,13 +2,17 @@
 
 Welcome to **khx_color_text** - a minimal Python package for printing colored text in the terminal with exactly five basic colors.
 
+**🎉 Now live on PyPI!** 
+
 ## Quick Start
 
-Install the package:
+Install the package from PyPI:
 
 ```bash
 pip install khx_color_text
 ```
+
+[![PyPI version](https://badge.fury.io/py/khx-color-text.svg)](https://pypi.org/project/khx-color-text/)
 
 Use it in Python:
 
@@ -34,4 +38,7 @@ khx-ct "Hello World!" --color cyan
 
 ## Next Steps
 
-Check out the [Examples](examples.md) page to see all colors in action with visual previews.
+- [Installation Guide](installation.md) - Detailed installation instructions
+- [Examples](examples.md) - See all colors in action with visual previews
+- [GitHub Repository](https://github.com/Khader-X/khx_color_text) - Source code and issues
+- [PyPI Package](https://pypi.org/project/khx-color-text/) - Package details and statistics
