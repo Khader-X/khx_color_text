@@ -2,6 +2,21 @@
 
 Here are comprehensive examples showcasing all the features of khx_color_text.
 
+## Comprehensive Usage Examples
+![Comprehensive Examples](assets/comprehensive_examples_extra_large.svg)
+
+## Real-World Use Cases
+![Real-World Use Cases](assets/real_world_use_cases_extra_large.svg)
+
+## Integration Examples
+![Integration Examples](assets/integration_examples_extra_large.svg)
+
+## Error Handling
+![Error Handling](assets/error_handling_extra_large.svg)
+
+## Style Combinations
+![Style Combinations](assets/style_combinations_extra_large.svg)
+
 First, install the package from PyPI:
 ```bash
 pip install khx_color_text

@@ -4,7 +4,7 @@ Welcome to **khx_color_text** - a comprehensive Python package for printing colo
 
 **🎉 Now live on PyPI!** 
 
-![Showcase](assets/showcase.svg)
+![Main Showcase](assets/main_showcase.svg)
 
 ## Quick Start
 

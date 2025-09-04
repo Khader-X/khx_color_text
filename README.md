@@ -10,7 +10,7 @@ A comprehensive Python package for printing colored and styled text in the termi
 
 **🎉 Now available on PyPI!** Install with: `pip install khx_color_text`
 
-<img src="docs/assets/showcase.svg" alt="khx_color_text showcase" width="800">
+<img src="docs/assets/main_showcase.svg" alt="khx_color_text comprehensive showcase" width="1400">
 
 ## ✨ Features
 
@@ -58,24 +58,36 @@ cprint("Fancy text", "#00FF00", bg_color=(50, 50, 50), style=["bold", "italic"])
 
 ## Color Support
 
-### Predefined Colors
-<img src="docs/assets/hex_examples.svg" alt="Hex color examples" width="600">
+### Complete Color Palette
+<img src="docs/assets/color_palette_large.svg" alt="Complete color palette" width="1400">
 
 **Basic Colors**: red, green, blue, yellow, cyan, magenta, white, black  
 **Bright Colors**: bright_red, bright_green, bright_blue, bright_yellow, bright_cyan, bright_magenta, bright_white, bright_black  
 **Aliases**: orange, purple, pink, gray, grey
 
-### Custom Colors
-<img src="docs/assets/rgb_examples.svg" alt="RGB color examples" width="600">
+### Hex Colors
+<img src="docs/assets/hex_colors_large.svg" alt="Hex color examples" width="1400">
 
 - **Hex Format**: `#FF0000`, `#f00` (3 or 6 digit hex)
+- **Full range**: Any valid hex color supported
+
+### RGB Colors
+<img src="docs/assets/rgb_colors_large.svg" alt="RGB color examples" width="1400">
+
 - **RGB Format**: `(255, 0, 0)` (values 0-255)
+- **Precise control**: 16.7 million colors available
 
 ## Text Styling
 
-<img src="docs/assets/combinations.svg" alt="Style combinations" width="400">
+<img src="docs/assets/text_styles_large.svg" alt="Text styling options" width="1400">
 
 Available styles: `bold`, `italic`, `underline`, `strikethrough`, `dim`, `bright`
+
+### Style Combinations
+<img src="docs/assets/style_combinations_extra_large.svg" alt="Style combinations showcase" width="1400">
+
+### Background Colors
+<img src="docs/assets/background_colors_large.svg" alt="Background color support" width="1400">
 
 ```python
 # Single style
@@ -91,7 +103,12 @@ cprint("Enum style", "green", style=TextStyle.BOLD)
 
 ## CLI Usage
 
+<img src="docs/assets/cli_demo_large.svg" alt="CLI demonstration" width="1400">
+
 The package includes a powerful command-line tool `khx-ct`:
+
+### Advanced CLI Features
+<img src="docs/assets/advanced_cli_extra_large.svg" alt="Advanced CLI features" width="1400">
 
 ```bash
 # Basic usage
@@ -145,6 +162,20 @@ Print colored and styled text to the terminal.
 
 ## Examples
 
+<img src="docs/assets/api_examples_large.svg" alt="Python API examples" width="1400">
+
+### Comprehensive Usage Examples
+<img src="docs/assets/comprehensive_examples_extra_large.svg" alt="Comprehensive usage examples" width="1400">
+
+### Real-World Use Cases
+<img src="docs/assets/real_world_use_cases_extra_large.svg" alt="Real-world use cases" width="1400">
+
+### Integration Examples
+<img src="docs/assets/integration_examples_extra_large.svg" alt="Integration examples" width="1400">
+
+### Error Handling
+<img src="docs/assets/error_handling_extra_large.svg" alt="Error handling and validation" width="1400">
+
 ### Basic Usage
 ```python
 from khx_color_text import cprint
@@ -182,6 +213,14 @@ if __name__ == "__main__":
     cprint("Ultimate text", "#00FF00", bg_color=(50, 50, 50), 
            style=[TextStyle.BOLD, TextStyle.ITALIC])
 ```
+
+## Installation & Quick Start
+
+<img src="docs/assets/installation_demo_large.svg" alt="Installation demonstration" width="1400">
+
+## Feature Evolution
+
+<img src="docs/assets/feature_comparison_large.svg" alt="Feature comparison v0.1.0 to v0.2.0" width="1400">
 
 ## Testing
 
