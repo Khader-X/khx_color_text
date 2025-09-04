@@ -30,7 +30,7 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest>=8"]
-docs = ["rich>=13", "mkdocs>=1.6", "mkdocs-material>=9.6"]
+docs = ["rich>=13", "mkdocs>=1.6", "mkdocs-material>=9.6", "matplotlib>=3.7"]
 
 [project.scripts]
 khx-ct = "khx_color_text.cli:main"

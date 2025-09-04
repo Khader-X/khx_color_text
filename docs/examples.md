@@ -24,6 +24,20 @@ pip install khx_color_text
 
 ## Basic Colors
 
+### Message Types
+
+**Success Messages:**
+![Success Message](assets/success_message_terminal.svg)
+
+**Error Messages:**
+![Error Message](assets/error_message_terminal.svg)
+
+**Warning Messages:**
+![Warning Message](assets/warning_message_terminal.svg)
+
+**Info Messages:**
+![Info Message](assets/info_message_terminal.svg)
+
 ### Predefined Colors
 ```python
 from khx_color_text import cprint
@@ -48,9 +62,15 @@ cprint("Pink text", "pink")
 cprint("Gray text", "gray")
 ```
 
+**Bright Colors Example:**
+![Bright Colors](assets/bright_color_terminal.svg)
+
 ## Custom Colors
 
 ### Hex Colors
+
+![Hex Color Example](assets/hex_color_terminal.svg)
+
 ```python
 # Full hex format
 cprint("Custom red", "#FF0000")
@@ -140,6 +160,8 @@ cprint("Ultimate text", "#00FF00", bg_color=(50, 50, 50), style=[TextStyle.BOLD,
 ```
 
 ## Command Line Usage
+
+![CLI Usage](assets/cli_usage_terminal.svg)
 
 ### Basic Usage
 ```bash

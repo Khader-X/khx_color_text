@@ -32,6 +32,8 @@ pip install khx_color_text
 
 ## Quick Start
 
+<img src="docs/assets/basic_usage_terminal.svg" alt="Basic usage example" width="800">
+
 ```python
 from khx_color_text import cprint
 
@@ -65,7 +67,12 @@ cprint("Fancy text", "#00FF00", bg_color=(50, 50, 50), style=["bold", "italic"])
 **Bright Colors**: bright_red, bright_green, bright_blue, bright_yellow, bright_cyan, bright_magenta, bright_white, bright_black  
 **Aliases**: orange, purple, pink, gray, grey
 
+**Bright Colors Example:**
+<img src="docs/assets/bright_color_terminal.svg" alt="Bright colors example" width="800">
+
 ### Hex Colors
+<img src="docs/assets/hex_color_terminal.svg" alt="Hex color example" width="800">
+
 <img src="docs/assets/hex_colors_large.svg" alt="Hex color examples" width="1400">
 
 - **Hex Format**: `#FF0000`, `#f00` (3 or 6 digit hex)
@@ -102,6 +109,8 @@ cprint("Enum style", "green", style=TextStyle.BOLD)
 ```
 
 ## CLI Usage
+
+<img src="docs/assets/cli_usage_terminal.svg" alt="CLI usage example" width="800">
 
 <img src="docs/assets/cli_demo_large.svg" alt="CLI demonstration" width="1400">
 
@@ -177,6 +186,19 @@ Print colored and styled text to the terminal.
 <img src="docs/assets/error_handling_extra_large.svg" alt="Error handling and validation" width="1400">
 
 ### Basic Usage
+
+**Success Messages:**
+<img src="docs/assets/success_message_terminal.svg" alt="Success message example" width="800">
+
+**Error Messages:**
+<img src="docs/assets/error_message_terminal.svg" alt="Error message example" width="800">
+
+**Warning Messages:**
+<img src="docs/assets/warning_message_terminal.svg" alt="Warning message example" width="800">
+
+**Info Messages:**
+<img src="docs/assets/info_message_terminal.svg" alt="Info message example" width="800">
+
 ```python
 from khx_color_text import cprint
 

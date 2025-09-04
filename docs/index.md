@@ -18,6 +18,8 @@ pip install khx_color_text
 
 Use it in Python:
 
+![Basic Usage](assets/basic_usage_terminal.svg)
+
 ```python
 from khx_color_text import cprint
 
@@ -38,6 +40,8 @@ cprint("Highlighted text", "white", bg_color="red")
 ```
 
 Or from the command line:
+
+![CLI Usage](assets/cli_usage_terminal.svg)
 
 ```bash
 khx-ct "Hello World!" -c red
